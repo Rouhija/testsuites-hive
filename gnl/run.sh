@@ -10,19 +10,22 @@ CYAN="\033[36m"
 WHITE="\033[37m"
 NORMAL="\033[0;39m"
 
-if [ $# -eq 0 ]; then
-	printf "$CYAN%s\n" "gnl: usage: ./run.sh <folder>"
-	exit 1
-fi
+# if [ $# -eq 0 ]; then
+# 	printf "$CYAN%s\n" "gnl: usage: ./run.sh <folder>"
+# 	exit 1
+# fi
 
-if test -f "../$1/author"; then
-	printf "$PINK%s%s\n" "Author:" $(cat ../$1/author)
+printf "$WHITE%s$NORMAL\n" "provide project folder:"
+read varfolder
+
+if test -f "../../$varfolder/author"; then
+	printf "$PINK%s%s\n" "Author:" $(cat ../../$varfolder/author)
 else
 	printf "$RED%s\n" "error: no author file"
 fi
 
 printf "$PINK%s$NORMAL\n" "compiling..."
-export testdir=$1
+export testdir=$varfolder
 make fclean && make
 
 printf "$PINK%s$NORMAL\n" "TEST LEAKS"
