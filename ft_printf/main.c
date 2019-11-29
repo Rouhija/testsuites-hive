@@ -54,6 +54,8 @@ void		test_numbers(int r1, int r2, char *test_name)
 	r1 = ft_printf("prefix plus %+3d\n", 4);
 	r2 = printf("prefix plus %+3d\n", 4);
 	assert_equal(r1, r2, test_name);
+
+	ft_printf("%hhd, %lld, %li, %c, %f\n", 130, 12414, 9999, 10, 123.923923);
 }
 
 void		test_hex(int r1, int r2, char *test_name)
@@ -115,6 +117,9 @@ void		test_extras(int r1, int r2, char *test_name)
 	r1 = ft_printf("ptr address %*p in hexadecimal.\n", 20, &r1);
 	r2 = printf("ptr address %*p in hexadecimal.\n", 20, &r1);
 	assert_equal(r1, r2, test_name);
+	ft_printf("Binary %b\n", 10);
+
+	ft_printf("Hex %.10X string %s char %c llo %llo\n", 123421, "stringi", 'F', 1293381293);
 }
 
 int			parse_options(char **options, char c)
