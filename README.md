@@ -1,9 +1,13 @@
 ## Description
-- Lightweight unit-tests
+Contains lightweight unit-tests and utils for Hive projects
 
+### Running tests
 ```bash
-./test.sh <test> <folder>
+./init.sh <test>
 ```
+
+### Utils
+- new_project.sh
 
 
 
