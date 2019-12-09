@@ -33,3 +33,9 @@ if [ $1 = "ft_printf" ]; then
 	./test_printf a
 	exit 1
 fi
+
+if [ $1 = "ft_ls" ]; then
+	cd ft_ls
+	./run.sh
+	exit 1
+fi
