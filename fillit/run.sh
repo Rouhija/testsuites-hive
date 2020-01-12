@@ -19,24 +19,26 @@ printf "$WHITE%s$NORMAL\n" "provide project folder:"
 read varfolder
 
 if test -f "../../$varfolder/author"; then
-	printf "$PINK%s\n%s\n" "Welcome:" $(cat ../../$varfolder/author)
+	printf "$PINK%s\n%s\n" "Authors:" $(cat ../../$varfolder/author)
 else
 	printf "$RED%s\n" "error: no author file"
 fi
 
 while [ 1 -le 3 ]
 do
-	printf "$WHITE%s$NORMAL\n" "choose test: basic, error, hard, all or comp"
+	printf "$WHITE"
+	echo "options:\n\t1 - basic tests\n\t2 - error tests\n\t3 - hard tests\n\t4 - compile"
 	read vartest
 
-	if [ $vartest = "comp" ] ; then
+	if [ $vartest = "4" ] ; then
 		cd ../../$varfolder
 		make fclean
 		make 
 		make clean
+		cd -
 	fi
 
-	if [ $vartest = "basic" ] || [ $vartest = "all" ] ; then
+	if [ $vartest = "1" ] ; then
 		printf "$PINK%s$NORMAL\n" "BASIC TESTS"
 		i=0
 		while [ $i -le 19 ]
@@ -59,7 +61,7 @@ do
 		printf "\n"
 	fi
 
-	if [ $vartest = "error" ] || [ $vartest = "all" ] ; then
+	if [ $vartest = "2" ] ; then
 		printf "$PINK%s$NORMAL\n" "ERROR HANDLING"
 		x=0
 		while [ $x -le 31 ]
@@ -79,7 +81,7 @@ do
 		printf "\n"
 	fi
 
-	if [ $vartest = "hard" ] || [ $vartest = "all" ] ; then
+	if [ $vartest = "3" ] ; then
 		printf "$PINK%s$NORMAL\n" "HARD TESTS"
 		x=0
 		while [ $x -le 3 ]
