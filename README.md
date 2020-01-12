@@ -2,8 +2,7 @@
 Contains lightweight unittests for Hive projects
 
 ### Running tests
-```bash
+```sh
 ./init.sh <test>
-
-
+```
 
