@@ -34,7 +34,6 @@ do
 		make fclean
 		make 
 		make clean
-		exit 1
 	fi
 
 	if [ $vartest = "basic" ] || [ $vartest = "all" ] ; then
