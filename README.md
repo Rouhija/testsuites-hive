@@ -1,8 +1,11 @@
-## Description
-Contains lightweight unittests for Hive projects
+# Description
+Contains following lightweight test modules for Hive projects:
+- fillit
+- ft_printf
+- get next line
 
-### Running tests
+### Usage
 ```sh
-./init.sh <test>
+./init.sh <module>
 ```
 

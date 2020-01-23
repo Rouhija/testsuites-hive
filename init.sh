@@ -43,9 +43,3 @@ if [ $1 = "ptfleaks" ]; then
 	kill $!
 	exit 1
 fi
-
-if [ $1 = "ft_ls" ]; then
-	cd ft_ls
-	./run.sh
-	exit 1
-fi

@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "ft_printf.h"
 
 void		assert_equal(int a, int b, char *test_name)
