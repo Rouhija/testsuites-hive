@@ -11,7 +11,7 @@ WHITE="\033[37m"
 NORMAL="\033[0;39m"
 
 if [ $# -ne 1 ]; then
-	printf "$CYAN%s\n" "usage: ./init.sh <test>"
+	printf "$CYAN%s\n" "usage: ./init.sh <gnl/fillit/ft_printf/ptfleaks>"
 	exit 1
 fi
 
@@ -31,6 +31,16 @@ if [ $1 = "ft_printf" ]; then
 	cd ft_printf
 	./start.sh "../$2"
 	./test_printf a
+	exit 1
+fi
+
+if [ $1 = "ptfleaks" ]; then
+	cd ft_printf
+	./start.sh "../$2"
+	./test_printf l &
+	sleep 2
+	leaks test_printf
+	kill $!
 	exit 1
 fi
 

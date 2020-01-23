@@ -144,19 +144,19 @@ void		tests(char **av)
 	r1 = 0;
 	r2 = 0;
 
-	if (parse_options(av, 's') || parse_options(av, 'a'))
+	if (parse_options(av, 's') || parse_options(av, 'a') || parse_options(av, 'l'))
 		test_strings("test string", r1, r2, "---- STRING TEST ----");
-	if (parse_options(av, 'p') || parse_options(av, 'a'))
+	if (parse_options(av, 'p') || parse_options(av, 'a') || parse_options(av, 'l'))
 		test_pointers(r1, r2, "---- POINTER TEST ----");
-	if (parse_options(av, 'd') || parse_options(av, 'a'))
+	if (parse_options(av, 'd') || parse_options(av, 'a') || parse_options(av, 'l'))
 		test_numbers(r1, r2, "---- INTEGER TEST ----");
-	if (parse_options(av, 'x') || parse_options(av, 'a'))
+	if (parse_options(av, 'x') || parse_options(av, 'a') || parse_options(av, 'l'))
 		test_hex(r1, r2, "---- HEX TEST ----");
-	if (parse_options(av, 'f') || parse_options(av, 'a'))
+	if (parse_options(av, 'f') || parse_options(av, 'a') || parse_options(av, 'l'))
 		test_floats(r1, r2, "---- FLOAT TEST ----");
-	if (parse_options(av, 'e') || parse_options(av, 'a'))
+	if (parse_options(av, 'e') || parse_options(av, 'a') || parse_options(av, 'l'))
 		test_extras(r1, r2, "---- EXTRAS TEST ----");
-	if (parse_options(av, 'm'))
+	if (parse_options(av, 'l'))
 		while(1);
 }
 
