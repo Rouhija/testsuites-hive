@@ -1,9 +1,9 @@
 NAME = test_gnl
 DIR = "${testdir}"
-SRCS = ../../$(DIR)/get_next_line.c main.c
-INCL = ../../$(DIR)/
+SRCS = $(DIR)/get_next_line.c main.c
+INCL = $(DIR)/
 FLAGS = -Wall -Werror -Wextra
-LIBDIR = ../../$(DIR)/libft
+LIBDIR = $(DIR)/libft
 
 all: $(NAME)
 

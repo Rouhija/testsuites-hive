@@ -10,16 +10,11 @@ CYAN="\033[36m"
 WHITE="\033[37m"
 NORMAL="\033[0;39m"
 
-# if [ $# -eq 0 ]; then
-# 	printf "$CYAN%s\n" "ft_printf: usage: ./start.sh <folder>"
-# 	exit 1
-# fi
+varfolder=$(../ft_select ../../*)
+sleep 1
 
-printf "$WHITE%s$NORMAL\n" "provide project folder:"
-read varfolder
-
-if test -f "../../$varfolder/author"; then
-	printf "$PINK%s%s$NORMAL\n" "Author:" $(cat ../../$varfolder/author)
+if test -f "$varfolder/author"; then
+	printf "$PINK%s%s$NORMAL\n" "Author:" $(cat $varfolder/author)
 else
 	printf "$RED%s$NORMAL\n" "error: no author file"
 fi

@@ -10,13 +10,8 @@ CYAN="\033[36m"
 WHITE="\033[37m"
 NORMAL="\033[0;39m"
 
-# if [ $# -ne 2 ]; then
-# 	printf "$CYAN%s\n" "fillit: usage: ./run.sh <project-folder> <action>"
-# 	exit 1
-# fi
-
-printf "$WHITE%s$NORMAL\n" "provide project folder:"
-read varfolder
+varfolder=$(../select ../*)
+sleep 1
 
 if test -f "../../$varfolder/author"; then
 	printf "$PINK%s\n%s\n" "Authors:" $(cat ../../$varfolder/author)

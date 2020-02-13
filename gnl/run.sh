@@ -10,16 +10,11 @@ CYAN="\033[36m"
 WHITE="\033[37m"
 NORMAL="\033[0;39m"
 
-# if [ $# -eq 0 ]; then
-# 	printf "$CYAN%s\n" "gnl: usage: ./run.sh <folder>"
-# 	exit 1
-# fi
+varfolder=$(../select ../../*)
+sleep 1
 
-printf "$WHITE%s$NORMAL\n" "provide project folder:"
-read varfolder
-
-if test -f "../../$varfolder/author"; then
-	printf "$PINK%s%s\n" "Author:" $(cat ../../$varfolder/author)
+if test -f "$varfolder/author"; then
+	printf "$PINK%s%s\n" "Author:" $(cat $varfolder/author)
 else
 	printf "$RED%s\n" "error: no author file"
 fi

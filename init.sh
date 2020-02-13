@@ -10,33 +10,30 @@ CYAN="\033[36m"
 WHITE="\033[37m"
 NORMAL="\033[0;39m"
 
-if [ $# -ne 1 ]; then
-	printf "$CYAN%s\n" "usage: ./init.sh <gnl/fillit/ft_printf/ptfleaks>"
-	exit 1
-fi
+vartest=$(./ft_select gnl fillit ft_printf ptfleaks)
 
-if [ $1 = "gnl" ]; then
+if [ $vartest = "./gnl" ]; then
 	cd gnl
 	./run.sh
 	exit 1
 fi
 
-if [ $1 = "fillit" ]; then
+if [ $vartest = "./fillit" ]; then
 	cd fillit
 	./run.sh
 	exit 1
 fi
 
-if [ $1 = "ft_printf" ]; then
+if [ $vartest = "./ft_printf" ]; then
 	cd ft_printf
-	./start.sh "../$2"
+	./start.sh
 	./test_printf a
 	exit 1
 fi
 
-if [ $1 = "ptfleaks" ]; then
+if [ $vartest = "./ptfleaks" ]; then
 	cd ft_printf
-	./start.sh "../$2"
+	./start.sh
 	./test_printf l &
 	sleep 2
 	leaks test_printf

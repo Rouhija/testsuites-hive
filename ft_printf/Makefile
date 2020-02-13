@@ -6,7 +6,7 @@
 #    By: srouhe <srouhe@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/15 16:29:02 by srouhe            #+#    #+#              #
-#    Updated: 2019/11/28 19:24:41 by srouhe           ###   ########.fr        #
+#    Updated: 2020/02/13 17:44:37 by srouhe           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ SRCS = main.c
 INCL = ../libft/includes
 FLAGS = -Wall -Werror -Wextra
 DIR = "${testdir}"
-LIBDIR = ../../$(DIR)
+LIBDIR = $(DIR)
 
 all: $(NAME)
 
