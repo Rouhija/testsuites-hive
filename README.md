@@ -6,6 +6,6 @@ Contains following lightweight test modules for Hive projects:
 
 ### Usage
 ```sh
-./init.sh <module>
+./init.sh
 ```
 
